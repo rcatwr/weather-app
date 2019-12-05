@@ -94,7 +94,7 @@ import iconMap from "./iconMap"
 
 
 
-  const weatherComponents = this.state.forecast.slice(0,6).map((w,i) => <WeatherCard day={week[i]} key={i} date={this.state.date[i]} icon = {iconArray[i]} tempHi = {w.maxTemp} tempLo = {w.minTemp} />)
+  const weatherComponents = this.state.forecast.slice(0,6).map((w,i) => <WeatherCard weather={this.state.forecast[i].weather} day={week[i]} key={i} date={this.state.date[i]} icon = {iconArray[i]} tempHi = {w.maxTemp} tempLo = {w.minTemp} />)
 
   return(
     <div className="container is-fluid">
