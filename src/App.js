@@ -52,7 +52,7 @@ import iconMap from "./iconMap"
              data.city.forecast.forecastDay.map((date)=> monthArray.push(dateMap[date.forecastDate.slice(4,8)]))
              console.log(monthArray);
              // chop day out and remove 0 values
-             data.city.forecast.forecastDay.map((date)=> dayArray.push(date.forecastDate.slice(8,10).replace("0",'')))
+             data.city.forecast.forecastDay.map((date)=> dayArray.push( date.forecastDate.slice(7,10).startsWith("-0") ? date.forecastDate.slice(7,10).replace("-0",'') : date.forecastDate.slice(7,10).replace("-",'') ))
              console.log(dayArray)
              monthArray.map((mon, i) => fullDate.push(`${mon} ${dayArray[i]}, ${yearArray[i]}`))
              console.log(fullDate)
