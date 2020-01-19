@@ -17,7 +17,7 @@ import iconMap from "./iconMap"
 
   componentDidMount(){
 
-     fetch('https://worldweather.wmo.int/en/json/620_en.json')
+     fetch('https://worldweather.wmo.int/en/json/620_en.json', {credentials:'omit'})
             .then(response => response.json())
             .then(data => {
               console.log(data);
